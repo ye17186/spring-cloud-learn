@@ -6,12 +6,9 @@ server:
 
 eureka:
   instance:
-    # 客户端发送心跳到Eureka频率
-    lease-renewal-interval-in-seconds: 1
-    # 客户端有效期，即2秒没发送心跳，则表示服务挂掉，Eureka剔除本服务
-    lease-expiration-duration-in-seconds: 5
+    lease-renewal-interval-in-seconds: 1 # 客户端发送心跳到Eureka频率
+    lease-expiration-duration-in-seconds: 2  # 客户端有效期，即2秒没发送心跳，则表示服务挂掉，Eureka剔除本服务
   client:
     service-url:
       defaultZone: http://127.0.0.1:9001/eureka
-    # 客户端拉取服务注册消息的频率
-    registry-fetch-interval-seconds: 5
+    registry-fetch-interval-seconds: 2 # 客户端拉取服务注册消息的频率

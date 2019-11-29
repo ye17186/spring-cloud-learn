@@ -1,8 +1,8 @@
 spring:
   application:
-    name: cloud-demo-service-a
+    name: cloud-demo-service-b
 server:
-  port: 9011
+  port: 9012
 
 eureka:
   instance:

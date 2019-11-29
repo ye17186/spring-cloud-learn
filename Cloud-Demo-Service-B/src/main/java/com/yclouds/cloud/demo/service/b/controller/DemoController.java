@@ -1,8 +1,8 @@
 package com.yclouds.cloud.demo.service.b.controller;
 
 import com.yclouds.myhelper.web.annotation.YRestController;
+import com.yclouds.myhelper.web.response.ApiResp;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RestController;
 
 /**
  * DemoController
@@ -13,13 +13,19 @@ import org.springframework.web.bind.annotation.RestController;
 @YRestController("/demo")
 public class DemoController {
 
+    @GetMapping("/m1")
+    public ApiResp<String> method1() {
+
+        return ApiResp.retOK("i am service b#method1()");
+    }
+
     @GetMapping("/m2")
-    public String sayHello() throws InterruptedException {
+    public ApiResp<String> method2() throws InterruptedException {
 
         System.out.println("start");
         Thread.sleep(15000);
         System.out.println("end");
-        return "i am service b";
+        return ApiResp.retOK("i am service b#method2()");
     }
 
 }

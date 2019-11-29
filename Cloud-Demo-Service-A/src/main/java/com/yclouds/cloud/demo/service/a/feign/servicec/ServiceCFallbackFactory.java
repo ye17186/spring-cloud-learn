@@ -1,4 +1,4 @@
-package com.yclouds.cloud.demo.service.a.feign.serviceb;
+package com.yclouds.cloud.demo.service.a.feign.servicec;
 
 import com.yclouds.cloud.demo.service.a.feign.ServiceId;
 import com.yclouds.myhelper.feign.fallback.AbstractFeignFallback;
@@ -16,34 +16,34 @@ import org.springframework.stereotype.Component;
  */
 @Slf4j
 @Component
-public class ServiceBFallbackFactory extends AbstractFeignFallback implements
-    FallbackFactory<ServiceBFeignClient> {
+public class ServiceCFallbackFactory extends AbstractFeignFallback implements
+    FallbackFactory<ServiceCFeignClient> {
 
     @PostConstruct
     public void init() {
-        setServiceId(ServiceId.SERVICE_B);
+        setServiceId(ServiceId.SERVICE_C);
     }
 
     @Override
-    public ServiceBFeignClient create(Throwable cause) {
+    public ServiceCFeignClient create(Throwable cause) {
 
         // 打印fallback异常
         printLog(cause);
 
-        return new ServiceBFeignClient() {
+        return new ServiceCFeignClient() {
             @Override
             public ApiResp<String> demoM1() {
-                return fallbackServiceB("demoM1");
+                return fallbackServiceC("demoM1");
             }
 
             @Override
             public ApiResp<String> demoM2() {
-                return fallbackServiceB("demoM2");
+                return fallbackServiceC("demoM2");
             }
         };
     }
 
-    private <T> ApiResp<T> fallbackServiceB(String method) {
+    private <T> ApiResp<T> fallbackServiceC(String method) {
         return fallback(method);
     }
 }

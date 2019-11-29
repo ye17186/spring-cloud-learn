@@ -9,5 +9,6 @@ package com.yclouds.cloud.demo.service.a.feign;
 public class ServiceId {
 
     public static final String SERVICE_B = "cloud-demo-service-b";
+    public static final String SERVICE_C = "cloud-demo-service-c";
 
 }

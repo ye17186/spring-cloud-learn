@@ -1,4 +1,4 @@
-package com.yclouds.cloud.demo.service.a.feign.serviceb;
+package com.yclouds.cloud.demo.service.a.feign.servicec;
 
 import com.yclouds.cloud.demo.service.a.feign.ServiceId;
 import com.yclouds.myhelper.web.response.ApiResp;
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.GetMapping;
  * @author ye17186
  * @version 2019/11/28 17:41
  */
-@FeignClient(value = ServiceId.SERVICE_B, fallbackFactory = ServiceBFallbackFactory.class)
-public interface ServiceBFeignClient {
+@FeignClient(value = ServiceId.SERVICE_C, fallbackFactory = ServiceCFallbackFactory.class)
+public interface ServiceCFeignClient {
 
     @GetMapping("/demo/m1")
     ApiResp<String> demoM1();
