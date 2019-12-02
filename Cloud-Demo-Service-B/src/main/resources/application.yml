@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-demo-service-b
+  http:
+    encoding:
+      force: true # 其中Http编码
+
+feign:
+  hystrix:
+    enabled: true # 开启feign的断路器功能
+
+logging:
+  level:
+    root: warn
+    com.yclouds: debug

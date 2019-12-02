@@ -1,0 +1,3 @@
+# 测试环境日志配置
+logging:
+  config: classpath:config/log/log4j2-spring-test.xml

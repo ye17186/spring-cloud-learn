@@ -1,21 +1,4 @@
-spring:
-  application:
-    name: cloud-demo-eureka
-server:
-  port: 9001
-
-eureka:
-  server:
-    enable-self-preservation: false # 关闭自我保护模式（缺省为打开）
-    eviction-interval-timer-in-ms: 5000 # 剔除失效服务间隔（缺省为60*1000ms）
-  client:
-    register-with-eureka: false
-    fetch-registry: false
-    service-url:
-      defaultZone: http://127.0.0.1:${server.port}/eureka/
-
 logging:
   level:
     root: warn
     com.yclouds: debug
-

@@ -1,0 +1,15 @@
+spring:
+  application:
+    name: cloud-demo-eureka
+server:
+  port: 9001
+
+eureka:
+  server:
+    enable-self-preservation: false # 是否开启自我保护（关闭后，服务宕机后会立马从注册中心剔除）
+    eviction-interval-timer-in-ms: 5000 # 剔除无效服务的时间间隔
+  client:
+    register-with-eureka: false # 当前节点是否注册到注册中心
+    fetch-registry: false # 是否拉取注册中心信息
+    service-url:
+      defaultZone: http://127.0.0.1:${server.port}/eureka/

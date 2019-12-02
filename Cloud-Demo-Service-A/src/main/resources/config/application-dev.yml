@@ -1,0 +1,4 @@
+# 开发环境配置
+spring:
+  profiles:
+    include: dev-ds, dev-log, dev-redis

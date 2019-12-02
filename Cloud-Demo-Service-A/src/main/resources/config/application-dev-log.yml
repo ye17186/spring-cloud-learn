@@ -1,0 +1,3 @@
+# 开发环境数日志配置
+logging:
+  config: classpath:config/log/log4j2-spring-dev.xml

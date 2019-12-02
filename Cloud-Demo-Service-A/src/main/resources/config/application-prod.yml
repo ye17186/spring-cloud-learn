@@ -1,0 +1,4 @@
+# 生产环境配置
+spring:
+  profiles:
+    include: test-ds, test-log, test-redis
