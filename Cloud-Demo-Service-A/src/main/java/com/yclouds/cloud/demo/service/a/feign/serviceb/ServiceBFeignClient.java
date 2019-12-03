@@ -18,5 +18,5 @@ public interface ServiceBFeignClient {
     ApiResp<String> demoM1();
 
     @GetMapping("/demo/m2")
-    ApiResp<String> demoM2();
+    ApiResp<Integer> demoM2();
 }

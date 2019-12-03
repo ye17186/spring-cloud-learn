@@ -2,7 +2,7 @@ spring:
   application:
     name: cloud-demo-zuul
 server:
-  port: 9998
+  port: 9999
 
 eureka:
   instance:

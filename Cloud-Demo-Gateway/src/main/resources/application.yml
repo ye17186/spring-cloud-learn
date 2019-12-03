@@ -1,0 +1,26 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true # 启用服务注册发现，开启后可以根据服务ID进行路由
+          lower-case-service-id: true # 服务ID使用小写
+#      routes:
+#        - id: ribbon-route
+#          uri: lb://cloud-demo-service-a
+#          predicates:
+#            - Path=/cloud-demo-service-a/**
+#          filters:
+#            - name: Hystrix
+#              args:
+#                name: fallback
+#                fallbackUri: forward:/fallback
+      default-filters:
+        - name: Hystrix
+          args:
+            name: fallback
+            fallbackUri: forward:/fallback
+myhelper:
+  plugins:
+    token:
+      enabled: true

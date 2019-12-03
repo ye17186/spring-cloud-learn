@@ -5,8 +5,6 @@ import com.yclouds.myhelper.web.annotation.YRestController;
 import com.yclouds.myhelper.web.response.ApiResp;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.autoconfigure.http.HttpProperties;
-import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 
@@ -21,14 +19,10 @@ import org.springframework.web.bind.annotation.PostMapping;
 public class DemoController {
 
     @Autowired
-    HttpProperties properties;
-
-    @Autowired
     ServiceBFeignClient serviceBFeignClient;
 
     @PostMapping(value = "/m1")
     public ApiResp<String> method1() {
-        System.out.println(properties);
         return ApiResp.retOK("你好i am service a#method1()");
     }
 
@@ -38,12 +32,6 @@ public class DemoController {
         ApiResp<String> bResult = serviceBFeignClient.demoM1();
         log.info(bResult.toString());
         return ApiResp.retOK("你好i am service a#method2()");
-    }
-
-    @GetMapping("/m3")
-    public String method3() {
-
-        return "你好i am service a#method3()";
     }
 
 }

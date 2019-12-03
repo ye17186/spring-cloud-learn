@@ -1,8 +1,13 @@
+myhelper:
+  plugins:
+    token:
+      enabled: true
+
 ribbon:
-  ConnectTimeout: 1000 # 请求连接的超时时间
-  ReadTimeout: 10000 # 请求处理的超时时间
-  MaxAutoRetries: 1 # 当前实例的重试次数
-  MaxAutoRetriesNextServer: 0 # 切换实例的重试次数
+  ConnectTimeout: 1000 # 杩炴帴瓒呮椂鏃堕棿
+  ReadTimeout: 10000 # 澶勭悊瓒呮椂鏃堕棿
+  MaxAutoRetries: 1 # 褰撳墠瀹炰緥閲嶈瘯娆℃暟
+  MaxAutoRetriesNextServer: 0 # 鍏朵粬瀹炰緥閲嶈瘯娆℃暟
 
 logging:
   level:

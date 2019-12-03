@@ -4,7 +4,19 @@ spring:
   http:
     encoding:
       force: true # 其中Http编码
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: Asia/Shanghai
+  mvc:
+    throw-exception-if-no-handler-found: true # 404时抛出异常
+  resources:
+    add-mappings: false # 默认为true，404时会自动映射到/error控制器
 
 feign:
   hystrix:
     enabled: true # 开启feign的断路器功能
+
+myhelper:
+  plugins:
+    controller-advice:
+      enabled: true # 启用Controller增强处理
