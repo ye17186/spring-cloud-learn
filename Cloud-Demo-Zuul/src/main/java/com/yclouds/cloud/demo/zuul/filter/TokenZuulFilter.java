@@ -4,7 +4,6 @@ import com.google.common.base.Charsets;
 import com.netflix.zuul.ZuulFilter;
 import com.netflix.zuul.context.RequestContext;
 import com.yclouds.myhelper.constants.ZuulFilterType;
-import com.yclouds.myhelper.plugins.token.TokenProperties;
 import com.yclouds.myhelper.plugins.token.TokenService;
 import com.yclouds.myhelper.utils.JsonUtils;
 import com.yclouds.myhelper.web.error.code.IEnumError;
@@ -23,21 +22,14 @@ import org.springframework.http.MediaType;
 /**
  * TokenZuulFilter
  *
- * @author yemeng-lhq
+ * @author ye17186
  * @version 2019/12/3 12:36
  */
 @Log4j2
 @Setter
 @Getter
-@Configuration
+// @Configuration
 public class TokenZuulFilter extends ZuulFilter {
-
-    private static final String HEADER_TOKEN = "token";
-    private static final String HEADER_TIMESTAMP = "timestamp";
-    private static final String HEADER_NONCE = "nonce";
-    private static final String HEADER_SIGN = "signature";
-
-    private TokenProperties properties;
 
     @Autowired
     private TokenService tokenService;

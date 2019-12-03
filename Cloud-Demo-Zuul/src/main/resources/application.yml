@@ -1,7 +1,7 @@
-myhelper:
-  plugins:
-    token:
-      enabled: true
+#myhelper:
+#  plugins:
+#    token:
+#      enabled: true
 
 ribbon:
   ConnectTimeout: 1000 # 连接超时时间
